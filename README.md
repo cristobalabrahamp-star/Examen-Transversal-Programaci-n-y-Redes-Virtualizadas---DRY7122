@@ -38,3 +38,19 @@ El sistema implementa un mecanismo de autenticación segura utilizando la base d
 Para garantizar la integridad y seguridad de las contraseñas, se utiliza el algoritmo de cifrado **SHA-256** (Secure Hash Algorithm 256-bit). Este método es implementado mediante la librería estándar `hashlib` de Python. 
 
 * **Proceso:** La contraseña ingresada por el usuario es convertida a un hash irreversible antes de ser guardada en la base de datos, evitando así el almacenamiento de credenciales en texto plano.
+
+
+
+## Módulo de Automatización NETCONF
+Este módulo permite la gestión programática del router CSR1000v utilizando el protocolo NETCONF.
+
+### Prerrequisitos
+* **Puerto:** TCP 830 (Debe estar habilitado en el router).
+* **Librerías:** `ncclient` (Instalar con `pip install ncclient`).
+* **Variables de entorno/configuración:**
+    * `host`: IP del router (ej. 192.168.142.10).
+    * `username`: Usuario con privilegios de gestión.
+    * `password`: Credenciales de acceso.
+
+### Ejecución
+El script `netconf_check.py` realiza la conexión, autenticación y solicita al dispositivo la lista de *capabilities* soportadas.
