@@ -1,7 +1,6 @@
 integrantes = [
-    "Cristobal Abraham Villagra Perez",
-    "Nombre Apellido Compañero 2",
-    "Nombre Apellido Compañero 3"
+    "Cristobal Villagra",
+    "Gonzalo Aralla",
 ]
 
 print("Integrantes del grupo para el Examen Transversal:")
