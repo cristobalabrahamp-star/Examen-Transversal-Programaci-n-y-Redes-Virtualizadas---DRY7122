@@ -30,3 +30,11 @@ Este script permite calcular la ruta entre dos puntos geográficos (Santiago y M
 
 ### Ejecución:
 Ejecuta el script con el comando: `python3 ruta_graphhopper.py`
+
+## Gestión de Usuarios y Seguridad
+El sistema implementa un mecanismo de autenticación segura utilizando la base de datos SQLite para persistir la información de los usuarios. 
+
+### Método de Hashing:
+Para garantizar la integridad y seguridad de las contraseñas, se utiliza el algoritmo de cifrado **SHA-256** (Secure Hash Algorithm 256-bit). Este método es implementado mediante la librería estándar `hashlib` de Python. 
+
+* **Proceso:** La contraseña ingresada por el usuario es convertida a un hash irreversible antes de ser guardada en la base de datos, evitando así el almacenamiento de credenciales en texto plano.
