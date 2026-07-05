@@ -18,3 +18,15 @@ Cada script se puede ejecutar de forma independiente desde la terminal:
 * Verificador de VLAN: python3 script_vlan.py
 * Calculadora de rutas: python3 ruta_graphhopper.py
 * Base de datos y Servidor Web: python3 usuarios_hash.py
+
+* 
+## Módulo de Geolocalización (ruta_graphhopper.py)
+Este script permite calcular la ruta entre dos puntos geográficos (Santiago y Mendoza por defecto) consumiendo el endpoint `/route` de la API de GraphHopper.
+
+### Configuración:
+1. Crea un archivo `.env` en la raíz del proyecto.
+2. Agrega tu clave: `GRAPHOPPER_API_KEY=tu_clave_aqui`.
+3. Instala las dependencias: `pip install requests python-dotenv`.
+
+### Ejecución:
+Ejecuta el script con el comando: `python3 ruta_graphhopper.py`
