@@ -54,3 +54,12 @@ Este módulo permite la gestión programática del router CSR1000v utilizando el
 
 ### Ejecución
 El script `netconf_check.py` realiza la conexión, autenticación y solicita al dispositivo la lista de *capabilities* soportadas.
+
+
+
+## Ítem 6: Gestión vía API RESTCONF
+Este módulo documenta la configuración del router CSR1000v mediante llamadas API desde Postman usando formato JSON.
+
+* **Operación Loopback:** Se creó la interfaz Loopback 22 mediante el método `PUT`, asignando la IP 22.22.22.22 y dejándola administrativamente apagada.
+* **Consulta de Interfaces:** Se utilizó el método `GET` hacia el modelo de datos `ietf-interfaces` para extraer la lista de interfaces en formato JSON y validar su estado.
+* **Validación Física/Virtual:** Se confirmó mediante el comando `show ip interface brief` en la consola del router que la configuración enviada por la API se aplicó correctamente.
