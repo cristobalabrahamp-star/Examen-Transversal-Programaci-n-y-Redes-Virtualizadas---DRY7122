@@ -1,6 +1,2 @@
-requests
-tabulate
-ncclient
-pyang
-netmiko
-xmltodict
+requests>=2.28.0
+Flask>=2.0.0
