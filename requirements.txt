@@ -1,8 +1,6 @@
-[Explorador de VS Code]
-v EXAMEN_TRANSVERSAL_DRY7122
-  ≡ .env.example
-  ≡ .gitignore
-  ≡ README.md
-  ≡ requirements.txt
-  ▤ script_integrantes.py
-  ▤ script_vlan.py
+requests
+tabulate
+ncclient
+pyang
+netmiko
+xmltodict
