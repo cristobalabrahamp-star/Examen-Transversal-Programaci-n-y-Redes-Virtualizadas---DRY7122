@@ -60,6 +60,11 @@ El script `netconf_check.py` realiza la conexión, autenticación y solicita al 
 ## Ítem 6: Gestión vía API RESTCONF
 Este módulo documenta la configuración del router CSR1000v mediante llamadas API desde Postman usando formato JSON.
 
+## Ítem 7: Automatización de router CSR1000v (Ansible)
+* **Servicio configurado:** Asignación de direccionamiento IPv6 (Global y Link-Local) en la interfaz Loopback 33.
+* **Idempotencia y repetibilidad:** El playbook de Ansible creado (`pb_loopback33.yml`) es completamente idempotente. Al utilizar el módulo `ios_config`, si el script se ejecuta múltiples veces, Ansible evalúa el estado actual del equipo antes de actuar. Si las direcciones IPv6 ya están configuradas, el sistema reportará un estado `OK` (sin aplicar cambios adicionales) en lugar de `CHANGED`. Esto garantiza que la configuración no se duplique, no genere errores y se pueda repetir de forma segura sin romper el servicio en el router.
+
+
 * **Operación Loopback:** Se creó la interfaz Loopback 22 mediante el método `PUT`, asignando la IP 22.22.22.22 y dejándola administrativamente apagada.
 * **Consulta de Interfaces:** Se utilizó el método `GET` hacia el modelo de datos `ietf-interfaces` para extraer la lista de interfaces en formato JSON y validar su estado.
 * **Validación Física/Virtual:** Se confirmó mediante el comando `show ip interface brief` en la consola del router que la configuración enviada por la API se aplicó correctamente.
