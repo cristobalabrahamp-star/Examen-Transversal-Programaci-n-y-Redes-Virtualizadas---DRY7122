@@ -68,3 +68,10 @@ Este módulo documenta la configuración del router CSR1000v mediante llamadas A
 * **Operación Loopback:** Se creó la interfaz Loopback 22 mediante el método `PUT`, asignando la IP 22.22.22.22 y dejándola administrativamente apagada.
 * **Consulta de Interfaces:** Se utilizó el método `GET` hacia el modelo de datos `ietf-interfaces` para extraer la lista de interfaces en formato JSON y validar su estado.
 * **Validación Física/Virtual:** Se confirmó mediante el comando `show ip interface brief` en la consola del router que la configuración enviada por la API se aplicó correctamente.
+
+
+
+## Ítem 8: Automatización de CSR1000v con Netmiko
+* **Dependencias:** Para ejecutar este script es necesario instalar la librería mediante `pip install netmiko`.
+* **Parámetros de conexión:** El script establece una sesión SSH al router (IP 192.168.142.10) utilizando un diccionario de credenciales con `ConnectHandler` y el tipo de dispositivo `cisco_ios`.
+* **Ejecución:** Se aplicó configuración sobre la interfaz Loopback 100 utilizando el método `send_config_set()`. La validación y manejo de errores universal se implementaron utilizando un bloque `try/except`.
