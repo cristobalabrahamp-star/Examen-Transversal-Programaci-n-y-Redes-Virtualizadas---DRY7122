@@ -75,3 +75,10 @@ Este módulo documenta la configuración del router CSR1000v mediante llamadas A
 * **Dependencias:** Para ejecutar este script es necesario instalar la librería mediante `pip install netmiko`.
 * **Parámetros de conexión:** El script establece una sesión SSH al router (IP 192.168.142.10) utilizando un diccionario de credenciales con `ConnectHandler` y el tipo de dispositivo `cisco_ios`.
 * **Ejecución:** Se aplicó configuración sobre la interfaz Loopback 100 utilizando el método `send_config_set()`. La validación y manejo de errores universal se implementaron utilizando un bloque `try/except`.
+
+
+## Ítem 9: Operación General de SD-WAN y API vManage
+* **Operación General:** Cisco SD-WAN separa el plano de control del plano de datos. Utiliza una arquitectura centralizada donde el **vManage** actúa como el controlador principal de gestión y monitoreo. Los dispositivos de borde (routers vEdge/cEdge) se encargan de manejar el tráfico de datos real.
+* **Uso de Templates y Políticas:** A diferencia de la configuración tradicional por CLI equipo por equipo, SD-WAN permite crear **Templates** (plantillas) y políticas globales en el vManage. Estas configuraciones se empujan (push) de forma automatizada y simultánea a todos los sitios remotos de la red.
+* **Integración vía API:** Como se demostró mediante Postman, el Sandbox de SD-WAN expone una API REST. A través de llamadas a los endpoints de `/dataservice`, es posible extraer inventario de dispositivos, consultar plantillas, verificar conexiones de control y obtener telemetría en tiempo real, lo que permite una gestión 100% programable.
+* *Nota:* El servidor indicado originalmente en la pauta fue dado de baja (Error DNS). Se realizó troubleshooting y se actualizaron las consultas al servidor activo actual (`sandbox-sdwan-2.cisco.com`).
